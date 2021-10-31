@@ -24,7 +24,7 @@ const AddPackages = () => {
         const newPackages = {place, location, des, ratings, img, cost, minidesc, key}
         console.log(newPackages);
 
-        fetch('http://localhost:5000/packages', {
+        fetch('https://wicked-vault-61711.herokuapp.com/packages', {
             method:'POST',
             headers: {
                 'Content-Type': 'application/json'

@@ -9,7 +9,7 @@ const Option = (props) => {
         const keys = localStorage.getItem("keys")
         const keyArrey = keys.split(",");
         const productKey = keyArrey[index];
-        const url = `http://localhost:5000/orders${productKey}`;
+        const url = `https://wicked-vault-61711.herokuapp.com/orders${productKey}`;
         fetch(url, {
             method:'DELETE',
             headers: {

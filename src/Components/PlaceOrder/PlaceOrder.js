@@ -23,27 +23,9 @@ const PlaceOrder = () => {
     const emailsearch = user.email;
     console.log(emailsearch)
 
-    // useEffect(()=>{
-    //     fetch('http://localhost:5000/orders',{
-    //     method:'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify(emailsearch)
-    // })
-    //     .then(res => res.json())
-    //     .then(placedOrder =>{
-    //         placedOrder.map(res => {
-    //             setKeys(keys => [...keys, res.order]);
-    //             setUsersarrey(usersarrey => [...usersarrey, res.user]);
-    //             setOrderdata(placedOrder)
-    //         })
-    //     })
-    // },[])
-
 
     useEffect(()=>{
-        fetch('http://localhost:5000/orders')
+        fetch('https://wicked-vault-61711.herokuapp.com/orders')
         .then(res => res.json())
         .then(placedOrder =>{
             placedOrder.map(res => {
@@ -57,7 +39,7 @@ const PlaceOrder = () => {
 
     useEffect(() => {
         console.log("search hit");
-        fetch('http://localhost:5000/packages/search',{
+        fetch('https://wicked-vault-61711.herokuapp.com/packages/search',{
             method:'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -76,7 +58,7 @@ const PlaceOrder = () => {
 
         if(!finding){
             const orderid = {"order":packageid, "user": userEmail}
-            fetch('http://localhost:5000/orders', {
+            fetch('https://wicked-vault-61711.herokuapp.com/orders', {
                 method:'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -101,7 +83,7 @@ const PlaceOrder = () => {
                     if(store !== currentuser){
                         console.log("Can be inserted")
                         const orderid = {"order":packageid, "user": userEmail}
-                        fetch('http://localhost:5000/orders', {
+                        fetch('https://wicked-vault-61711.herokuapp.com/orders', {
                             method:'POST',
                             headers: {
                                 'Content-Type': 'application/json'

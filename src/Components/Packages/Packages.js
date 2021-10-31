@@ -9,7 +9,7 @@ const Packages = () => {
     const [packages, setPackages] = useState([])
 
     useEffect(()=> {
-        fetch('http://localhost:5000/packages')
+        fetch('https://wicked-vault-61711.herokuapp.com/packages')
         .then(res => res.json())
         .then(packages => setPackages(packages))
     },[])

@@ -7,7 +7,7 @@ const AdminPanale = () => {
     const [allldata, setAlldata] = useState([])
 
     useEffect(()=>{
-        fetch('http://localhost:5000/orders')
+        fetch('https://wicked-vault-61711.herokuapp.com/orders')
         .then(res => res.json())
         .then(data => setAlldata(data))
     },[])
